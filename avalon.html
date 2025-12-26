@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    
+    <script>
+        // 1. Where are they going?
+        const destinationURL = "https://maps.app.goo.gl/iMD2wkAYYULGd6d26"; 
+        // 2. What is the customer's name?
+        const customerName = "Avalon Data Products";
+        // 3. How many seconds?
+        let timeLeft = 5; 
+    </script>
+
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Change this to your brand color */
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8fafc;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 320px;
+            width: 90%;
+        }
+
+        .my-logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        .tagline {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .office-name {
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            margin: 0 0 1.5rem 0;
+            font-weight: 700;
+        }
+
+        /* The Loader Animation */
+        .loader-container {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .circular-loader {
+            width: 80px;
+            height: 80px;
+            border: 6px solid #e2e8f0;
+            border-top: 6px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .countdown-number {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .destination-text {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .destination-text b {
+            color: var(--text-dark);
+        }
+
+        .footer-note {
+            margin-top: 2rem;
+            font-size: 0.7rem;
+            color: #cbd5e1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkd7XlJMimHwKYtpKdAgRYv58Qw7rDhn_BtEjwpofvne10oZtS0y0vtSuy7b1qzHkaf1RN5IRWJtRXGQXyHKk3DgROQKTpdE_SYgpUNgj5r-N5fOfvCfLJWiLNjLn0iKlQdQjik_l8KouooXofOLSRzI48Ym17c89WdkXKo9Tt7betVrW7NplcIm=w16383" alt="Logo" class="my-logo">
+        
+        <div class="tagline">Providing Customer needs effectively... in a modern way...</div>
+        <h2 class="office-name">G.P.R Offset Printers</h2>
+
+        <div class="loader-container">
+            <div class="circular-loader"></div>
+            <div class="countdown-number" id="countdown">5</div>
+        </div>
+
+        <div class="destination-text">
+            Redirecting you to<br>
+            <b id="client-name">Loading...</b>
+        </div>
+
+        <div class="footer-note">
+            Secure Redirect &bull; 2026
+        </div>
+    </div>
+
+    <script>
+        // Update the client name on the page
+        document.getElementById('client-name').innerText = customerName;
+
+        // Start the countdown timer
+        const timerElement = document.getElementById('countdown');
+        
+        const countdownInterval = setInterval(() => {
+            timeLeft--;
+            timerElement.innerText = timeLeft;
+
+            if (timeLeft <= 0) {
+                clearInterval(countdownInterval);
+                window.location.replace(destinationURL);
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
