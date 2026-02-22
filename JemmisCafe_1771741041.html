@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Experience</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+        }
+
+        .main-container {
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #f39c12, #e74c3c, #9b59b6);
+        }
+
+        .logo {
+            width: 130px;
+            height: 130px;
+            border-radius: 20px;
+            margin: 0 auto 30px;
+            object-fit: cover;
+            border: 4px solid #f39c12;
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
+        }
+
+        h1 {
+            color: #1a1a2e;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .tagline {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 30px 0;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #f39c12, #e74c3c);
+            color: white;
+            border: none;
+            padding: 16px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s;
+            box-shadow: 0 5px 20px rgba(243, 156, 18, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.6);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #f39c12;
+            border: 2px solid #f39c12;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s;
+        }
+
+        .btn-secondary:hover {
+            background: #fff8e7;
+        }
+
+        .info-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 15px;
+            margin: 25px 0;
+            color: #333;
+        }
+
+        .timer-text {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .timer-text strong {
+            color: #f39c12;
+            font-weight: 700;
+        }
+
+        .footer-text {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        .crown {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="card">
+            <img src="../qr_codes_generated/logos/JemmisCafe_1771741041_logo.png" alt="Logo" class="logo">
+            
+            <div class="crown">👑</div>
+            <h1>Jemmi's Cafe</h1>
+            <p class="tagline">Premium Experience Awaits</p>
+
+            <div class="button-container">
+                <button class="btn-primary" onclick="visitNow('https://share.google/QKX4c81U3UxWtTqCA')">Visit Now</button>
+                <button class="btn-secondary" onclick="visitNow('https://share.google/QKX4c81U3UxWtTqCA')">Explore</button>
+            </div>
+
+            <div class="info-box">
+                <div class="timer-text">
+                    Redirecting in <strong id="countdown">10</strong> seconds
+                </div>
+            </div>
+
+            <div class="footer-text">
+                ✨ Powered by G.P.R Offset Printers
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let remainingTime = 10;
+
+        function visitNow(url) {
+            window.location.href = url;
+        }
+
+        const interval = setInterval(() => {
+            remainingTime--;
+            document.getElementById('countdown').textContent = remainingTime;
+            
+            if (remainingTime <= 0) {
+                clearInterval(interval);
+                window.location.href = 'https://share.google/QKX4c81U3UxWtTqCA';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
