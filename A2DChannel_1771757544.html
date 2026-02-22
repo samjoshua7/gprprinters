@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2D Channel</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --primary-accent: #667eea;
+            --secondary-accent: #764ba2;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary-accent) 0%, var(--secondary-accent) 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .card-wrapper {
+            position: relative;
+            width: 90%;
+            max-width: 380px;
+            margin-top: 20px;
+            overflow: visible;
+        }
+
+        .card {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            text-align: center;
+            position: relative;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-content { padding: 3rem 1.5rem 1.5rem 1.5rem; }
+
+        .client-logo-wrapper {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 1.5rem auto;
+            border-radius: 16px;
+            padding: 4px;
+            border: 2px solid var(--primary-accent);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .client-logo-img {
+            width: 100%; height: 100%;
+            object-fit: cover; border-radius: 12px;
+        }
+
+        .main-headline {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            line-height: 1.2;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 25px 0;
+        }
+
+        .action-btn {
+            border: none;
+            padding: 14px 20px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .action-btn:hover { transform: translateY(-2px); }
+        .action-btn:active { transform: scale(0.98); }
+
+        .btn-primary {
+            background: var(--primary-accent);
+            color: white;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f1f5f9;
+            color: var(--text-dark);
+        }
+
+        .auto-redirect-msg {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 10px;
+        }
+        
+        .auto-redirect-msg b { color: var(--primary-accent); }
+
+        .brand-footer {
+            background: #0f172a;
+            color: white;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 0 0 24px 24px;
+            position: relative;
+        }
+
+        .footer-left { display: flex; align-items: center; gap: 10px; }
+
+        .brand-logo-container {
+            background: white;
+            padding: 2px;
+            border-radius: 6px;
+            width: 32px; height: 32px;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .brand-logo { width: 22px; height: auto; }
+
+        .brand-info { display: flex; flex-direction: column; text-align: left; }
+        .brand-name { font-size: 0.75rem; font-weight: 700; color: white; }
+        .brand-tag { font-size: 0.6rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; }
+        .qr-icon { font-size: 1.2rem; opacity: 0.3; }
+
+    </style>
+</head>
+<body>
+
+    <div class="card-wrapper">
+        <div class="card">
+            <div class="card-content">
+                <div class="client-logo-wrapper">
+                    <img src="https://raw.githubusercontent.com/samjoshua7/gprprinters/main/logos/A2DChannel_1771757544_logo.png" alt="Customer Logo" class="client-logo-img">
+                </div>
+                
+                <h1 class="main-headline">Loving A2D Channel?</h1>
+                <div style="color: var(--text-light); font-size: 0.95rem; font-weight: 500;">We look forward to serving you.</div>
+
+                <div class="btn-container">
+                    <a href="#" onclick="redirectNow('https://share.google/mcbBj4QipgJMnTthG'); return false;" class="action-btn btn-primary">
+                        <span>Visit Now</span>
+                    </a>
+                    
+                    <a href="#" onclick="redirectNow('https://share.google/mcbBj4QipgJMnTthG'); return false;" class="action-btn btn-secondary">
+                        <span>Get Directions</span>
+                    </a>
+                </div>
+
+                <div class="auto-redirect-msg">
+                    Redirecting in <b id="countdown">12</b>s...
+                </div>
+            </div>
+
+            <div class="brand-footer">
+                <div class="footer-left">
+                    <div class="brand-logo-container">
+                        <img src="https://raw.githubusercontent.com/samjoshua7/gprprinters/main/gpr_logo.png" alt="GPR" class="brand-logo">
+                    </div>
+                    <div class="brand-info">
+                        <span class="brand-tag">Powered By</span>
+                        <span class="brand-name">G.P.R Offset Printers</span>
+                    </div>
+                </div>
+                <div class="qr-icon">🖨️</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let timeLeft = 12;
+        const redirectURL = 'https://share.google/mcbBj4QipgJMnTthG';
+
+        function redirectNow(url) {
+            window.location.href = url;
+        }
+
+        const timerElement = document.getElementById('countdown');
+        const countdownInterval = setInterval(() => {
+            timeLeft--;
+            if(timeLeft >= 0) timerElement.innerText = timeLeft;
+            if (timeLeft <= 0) {
+                clearInterval(countdownInterval);
+                window.location.replace(redirectURL);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
