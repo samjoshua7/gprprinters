@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - March 9 Shop</title>
+    <style>
+        body {
+            margin: 0; padding: 0; min-height: 100vh;
+            display: flex; justify-content: center; align-items: center;
+            background-color: #fdf5e6;
+            background-image: radial-gradient(#d2b48c 15%, transparent 16%), radial-gradient(#d2b48c 15%, transparent 16%);
+            background-size: 30px 30px; background-position: 0 0, 15px 15px;
+            font-family: 'Georgia', serif;
+        }
+        .container { position: relative; width: 90%; max-width: 380px; }
+        .floating-icon { position: absolute; z-index: 10; display: flex; align-items: center; justify-content: center; border-radius: 50%; animation: float 4s ease-in-out infinite; }
+        .icon-1 { width: 60px; height: 60px; background: #8b4513; top: -20px; left: -20px; font-size: 1.8rem; transform: rotate(-15deg); }
+        .icon-2 { width: 40px; height: 40px; background: #cd853f; bottom: 30px; right: -15px; font-size: 1.2rem; transform: rotate(20deg); animation-delay: 2s; }
+        @keyframes float { 0%, 100% { transform: translateY(0) rotate(-15deg); } 50% { transform: translateY(-10px) rotate(-5deg); } }
+        
+        .card { background: white; border-radius: 20px; border: 4px solid #8b4513; box-shadow: 0 10px 20px rgba(139, 69, 19, 0.2); position: relative; z-index: 5; text-align: center; display: flex; flex-direction: column; overflow: hidden; }
+        .card-content { padding: 2.5rem 1.5rem; }
+        .logo-wrap { width: 85px; height: 85px; margin: 0 auto 1rem; border: 3px dashed #cd853f; border-radius: 50%; padding: 4px; display: flex; align-items: center; justify-content: center; background: white; }
+        .logo-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+        h1 { font-size: 1.5rem; color: #5c4033; margin: 0 0 10px; }
+        .subtitle { color: #8b4513; font-size: 0.95rem; font-style: italic; margin-bottom: 20px; }
+        
+        .btn { display: inline-block; width: 100%; padding: 12px; margin-bottom: 10px; border-radius: 8px; font-weight: bold; text-decoration: none; box-sizing: border-box; font-family: 'Georgia', serif; }
+        .btn-primary { background: #8b4513; color: white; border: none; }
+        .btn-outline { background: white; color: #10b981; border: 2px solid #10b981; }
+        
+        .timer { font-size: 0.8rem; color: #cd853f; font-weight: bold; margin-top: 15px; }
+        .timer b { color: #8b4513; font-size: 1.1rem; }
+        
+        .footer { background: #5c4033; padding: 12px; display: flex; align-items: center; gap: 10px; color: white; text-align: left; }
+        .footer-logo { background: white; width: 24px; height: 24px; border-radius: 4px; display: flex; align-items: center; justify-content: center; }
+        .footer-text { display: flex; flex-direction: column; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="floating-icon icon-1">☕</div>
+        <div class="floating-icon icon-2" style="transform: rotate(20deg);">🥐</div>
+        <div class="card">
+            <div class="card-content">
+                <div class="logo-wrap"><img src="https://raw.githubusercontent.com/samjoshua7/gprprinters/main/logos/March9Shop_1773059907_logo.png" class="logo-img"></div>
+                <h1>March 9 Heading</h1>
+                <div class="subtitle">March 9 Welcome 🤎</div>
+                <a href="#" onclick="go('https://www.google.com/search?q=gpr+printers&rlz=1C1CHBD_enIN1193IN1193&oq=gpr+printers&gs_lcrp=EgZjaHJvbWUyDggAEEUYJxg5GIAEGIoFMggIARAAGBYYHjINCAIQABiGAxiABBiKBTINCAMQABiGAxiABBiKBTINCAQQABiGAxiABBiKBTIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCTEwNDE1ajBqMagCALACAA&sourceid=chrome&ie=UTF-8')" class="btn btn-primary">🧭 Redirect Now</a>
+                <a href="tel:+9192930495" class="btn btn-outline">📞 Call Now</a>
+                <div class="timer">Redirect in <b id="countdown">10</b>s ⏰</div>
+            </div>
+            <div class="footer">
+                <div class="footer-logo"><img src="https://raw.githubusercontent.com/samjoshua7/gprprinters/main/gpr_logo.png" style="width: 16px;"></div>
+                <div class="footer-text">
+                    <span style="font-size: 0.6rem; color: #deb887; text-transform: uppercase;">Powered By</span>
+                    <span style="font-size: 0.75rem; font-weight: bold;">G.P.R Offset Printers</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let t = 10;
+        function go(url) { window.location.href = url; }
+        setInterval(() => { t--; document.getElementById('countdown').innerText = t; if (t <= 0) go('https://www.google.com/search?q=gpr+printers&rlz=1C1CHBD_enIN1193IN1193&oq=gpr+printers&gs_lcrp=EgZjaHJvbWUyDggAEEUYJxg5GIAEGIoFMggIARAAGBYYHjINCAIQABiGAxiABBiKBTINCAMQABiGAxiABBiKBTINCAQQABiGAxiABBiKBTIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCTEwNDE1ajBqMagCALACAA&sourceid=chrome&ie=UTF-8'); }, 1000);
+    </script>
+</body>
+</html>
