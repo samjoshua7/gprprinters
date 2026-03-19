@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allwyn & Josephin - Wedding</title>
+    <style>
+        body {
+            margin: 0; padding: 0; display: flex; justify-content: center; align-items: center;
+            min-height: 100vh; background: linear-gradient(135deg, #fff5f7 0%, #ffeef4 100%);
+            font-family: 'Georgia', serif;
+        }
+        .container { position: relative; width: 90%; max-width: 380px; }
+        .emoji { position: absolute; font-size: 3rem; z-index: 10; }
+        .ring-left { left: -30px; top: 50px; animation: float 3s ease-in-out infinite; }
+        .ring-right { right: -25px; top: 80px; animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .card { background: white; border-radius: 20px; box-shadow: 0 20px 40px rgba(255, 105, 180, 0.2);
+            text-align: center; padding: 2.5rem 1.5rem; border: 3px solid #ffd700; }
+        .logo-wrap { width: 100px; height: 100px; margin: 0 auto 1.5rem; border-radius: 50%;
+            border: 3px solid #ff69b4; display: flex; align-items: center; justify-content: center;
+            overflow: hidden; background: white; }
+        .logo-img { width: 90%; height: 90%; object-fit: cover; border-radius: 50%; }
+        h1 { font-size: 1.8rem; color: #c41e3a; margin: 10px 0; font-weight: bold; }
+        .subtitle { color: #666; font-size: 0.95rem; margin-bottom: 1.5rem; font-style: italic; }
+        .btn { display: block; width: 100%; padding: 12px; margin-bottom: 10px; font-size: 0.9rem;
+            border-radius: 25px; font-weight: bold; text-decoration: none; border: none; cursor: pointer; }
+        .btn-primary { background: linear-gradient(135deg, #ff69b4, #c41e3a); color: white; }
+        .btn-outline { background: white; color: #ff69b4; border: 2px solid #ff69b4; }
+        .timer { font-size: 0.8rem; color: #999; margin-top: 1.5rem; }
+    </style>
+    <style>
+        .brand-footer {
+            background: #2c2c2c;
+            color: white;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 0 0 17px 17px;
+            
+        }
+        .footer-left { display: flex; align-items: center; gap: 10px; }
+        .brand-logo-container {
+            background: white;
+            padding: 2px;
+            border-radius: 6px;
+            width: 32px; height: 32px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .brand-logo { width: 24px; height: auto; }
+        .brand-info { display: flex; flex-direction: column; text-align: left; }
+        .brand-name { font-size: 0.75rem; font-weight: 700; color: white; }
+        .brand-tag { font-size: 0.6rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; }
+        .qr-icon { font-size: 1.2rem; opacity: 0.5; }</style>
+</head>
+<body>
+    <div class="container">
+        <div class="emoji ring-left">💍</div>
+        <div class="emoji ring-right">💒</div>
+        <div class="card" style="border-radius: 20px 20px 0 0;">
+            <div class="logo-wrap"><img src="https://raw.githubusercontent.com/samjoshua7/gprprinters/main/logos/AllwynJosephin_1773905581_logo.png" class="logo-img"></div>
+            <h1>Cordially invite to our Holy Matrimony</h1>
+            <div class="subtitle">on 10.30 Am @........</div>
+            <a href="https://share.google/N8sYO9I31zwOrrHHp" class="btn btn-primary">✨ View Details</a>
+            <a href="tel:+919944378141" class="btn btn-outline">📞 Call Us</a>
+            <div class="timer">Redirecting in <b id="countdown">10</b>s...</div>
+        </div>
+        <div class="brand-footer">
+                <div class="footer-left">
+                    <div class="brand-logo-container">
+                        <img src="https://raw.githubusercontent.com/samjoshua7/gprprinters/main/gpr_logo.png" alt="GPR" class="brand-logo">
+                    </div>
+                    <div class="brand-info">
+                        <span class="brand-tag">Powered By</span>
+                        <span class="brand-name">G.P.R Offset Printers</span>
+                    </div>
+                </div>
+                <div class="qr-icon">&#128424;</div>
+            </div>
+    </div>
+    <script>
+        let t = 10;
+        setInterval(() => { t--; if(document.getElementById('countdown')) document.getElementById('countdown').innerText = t;
+            if (t <= 0) window.location.replace('https://share.google/N8sYO9I31zwOrrHHp'); }, 1000);
+    </script>
+</body>
+</html>
